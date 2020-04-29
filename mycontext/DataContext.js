@@ -1,8 +1,8 @@
 import React, {createContext} from 'react';
 
 const DataContext = createContext({
-    id: 'hahajava',
-    name: 'haha'
+    searchText:'Scar',
+    id: '',
 })
 
 export default DataContext;

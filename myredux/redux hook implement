@@ -1,0 +1,68 @@
+import React, {useState} from 'react';
+import {
+View,
+Text,
+StyleSheet,
+TextInput,
+Button,
+TouchableOpacity,
+} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
+import {addProduct, delProduct} from './myredux/actions';
+const Products = () => {
+const {products} = useSelector(state => state.productReducer);
+const dispatch = useDispatch();
+const [item, setItem] = useState({
+name: '',
+maker: '',
+});
+const addProducts = () => {
+dispatch(addProduct(item));
+setItem({
+name: '',
+maker: '',
+});
+};
+const delProducts = id => {
+dispatch(delProduct(id));
+};
+return (
+<View>
+{products.map(product => (
+<TouchableOpacity
+key={product.id}
+onPress={() => delProducts(product.id)}>
+<View style={styles.product}>
+<Text>model: {product.name}</Text>
+<Text>, maker: {product.maker}</Text>
+</View>
+</TouchableOpacity>
+))}
+<View>
+<TextInput
+placeholder="name"
+value={item.name}
+onChangeText={text => setItem({...item, name: text})}
+/>
+<TextInput
+placeholder="maker"
+value={item.maker}
+onChangeText={text => setItem({...item, maker: text})}
+/>
+</View>
+<Button title="추가" onPress={addProducts} />
+</View>
+);
+};
+
+export default Products;
+
+const styles = StyleSheet.create({
+product: {
+flexDirection: 'row',
+},
+});
+
+
+참고 사이트:
+https://heartbeat.fritz.ai/using-redux-with-react-hooks-in-a-react-native-app-cc410a77f3e2

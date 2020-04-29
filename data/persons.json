@@ -1,0 +1,26 @@
+[
+    {
+        "gender": "male",
+        "firstname": "victor",
+        "lastname": "pedersen",
+        "email": "victor.pedersen@example.com",
+        "phone": "23138213",
+        "cell": "30393606"
+    },
+    {
+        "gender": "male",
+        "firstname": "carl",
+        "lastname": "jacobs",
+        "email": "carl.jacobs@example.com",
+        "phone": "031-501-5147",
+        "cell": "081-090-3541"
+    },
+    {
+        "gender": "male",
+        "firstname": "zachary",
+        "lastname": "lo",
+        "email": "zachary.lo@example.com",
+        "phone": "273-427-0510",
+        "cell": "309-911-7770"
+    }
+]
