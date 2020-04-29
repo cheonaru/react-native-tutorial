@@ -1,7 +1,7 @@
 import React, {createContext} from 'react';
 
 const DataContext= createContext({
-    searchText: '',
+    searchText: 'Scar',
     id: ''
 });
 

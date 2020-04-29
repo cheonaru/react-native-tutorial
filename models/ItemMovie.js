@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
 import DataContext from '../contexts/DataContext';
-
+import {Button, Chip} from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 class ItemMovie extends Component {
     static contextType= DataContext;
 
@@ -24,7 +25,7 @@ class ItemMovie extends Component {
                     <Text>{this.props.movie.Title}</Text>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <Button title="Detail" onPress={() => this.onSubmit(this.props.navigation, imdbID)} />
+                    <Chip title="Detail" onPress={() => this.onSubmit(this.props.navigation, imdbID)}>Detail</Chip>
                 </View>
             </View>
         );
@@ -49,11 +50,16 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         width: '20%',
-        height: 100,
+        height: '90%',
     },
     image: {
         height: '100%',
+        borderRadius: 20,
+
     },
+    buttonContainer: {
+        marginRight: 10,
+    }
 }
 );
 export default ItemMovie;

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text} from 'react-native';
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
 // import {Provider} from 'react-redux';
 // import {createStore} from 'redux';
@@ -15,11 +15,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 // import FetchView from './exam/FetchView';
 import SearchScreen from './screens/SearchScreen';
 import MoviesListScreen from './screens/MoviesListScreen';
+import MovieDetailScreen from './screens/MovieDetailScreen';
 const Stack = createStackNavigator();
 // const store = createStore(rootReducer);
 // const App=()=>{
 class App extends Component {
-  render() {
+  render(){
     return (
       // <NavigationContainer>
       //   <Stack.Navigator>
@@ -37,9 +38,10 @@ class App extends Component {
         <Stack.Navigator>
           <Stack.Screen name="SearchScreen" component={SearchScreen} />
           <Stack.Screen name="MoviesListScreen" component={MoviesListScreen} />
+          <Stack.Screen name="MovieDetailScreen" component={MovieDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-    );
+  );
   }
 }
 

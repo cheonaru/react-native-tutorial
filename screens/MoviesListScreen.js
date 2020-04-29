@@ -15,8 +15,8 @@ class MoviesListScreen extends Component {
     }
     getData(){
         let searchText= this.context.searchText;
-        console.log('searchText='+searchText);
-        fetch('http://www.omdbapi.com/?apikey=85e1dfd6&s='+searchText, {
+        console.log('searchText=' + searchText);
+        fetch('http://www.omdbapi.com/?apikey=8c59afe8&s='+searchText, {
             method: 'POST',
             headers:{
                 Accept:'application/json',

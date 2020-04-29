@@ -71,6 +71,7 @@ class MovieDetailScreen extends Component {
         then(response=>response.json()).
         then(responseJson=>{
             this.realData= responseJson;
+            console.log(responseJson);
             this.setState({isLoading:false});
         })
     }
@@ -87,9 +88,9 @@ class MovieDetailScreen extends Component {
                 
             <Image style={styles.image} source={{uri:this.realData.Poster}}></Image>
             </View>
-            <Text>Year: </Text>
-            <Text>BoxOffice: </Text>
-            <Text>Production : </Text>
+            <Text>Year: {this.realData.Year}</Text>
+            <Text>BoxOffice: {this.realData.BoxOffice}</Text>
+            <Text>Production :{this.realData.Production} </Text>
         </View>
     )
     }
