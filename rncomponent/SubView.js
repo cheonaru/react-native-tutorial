@@ -1,28 +1,28 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useContext } from 'react';
 import { View, Text, Image, StyleSheet, Button, TextInput, TouchableOpacity, FlatList } from 'react-native';
 
 import DataContext from '../mycontext/DataContext';
 
-//const SubView = (props) => {
-    class SubView extends Component {
-
-        static contextType= DataContext;
-        id = this.props.route.params.id;
+const SubView=(props)=>{
+    // class SubView extends Component {
+        // static contextType= DataContext;
+        const myContext= useContext(DataContext);
+        let id = props.route.params.id;
     
-        goMainView = () => {
-            this.props.navigation.navigate('MainView');
+        const goMainView=()=>{
+            props.navigation.navigate('MainView');
         }
         
-        render() {
-            console.log(`id=${this.id}`)
-            console.log(this.id.email)
+        // render(){
+            console.log(`id=${id}`);
+            console.log(myContext.email);
             return (
                 <View style={styles.Container}>
                     <Text>Sub View</Text>
-                    <Button title="to MainView" onPress={this.goMainView} />
+                    <Button title="to MainView" onPress={goMainView}/>
                 </View>
             )
-        }
+        // }
     }
 
 const styles = StyleSheet.create({
