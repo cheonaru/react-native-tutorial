@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
+//서드파티이기 때문에 import를 통한 사용
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
